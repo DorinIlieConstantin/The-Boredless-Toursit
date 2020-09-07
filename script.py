@@ -1,4 +1,4 @@
-destinations=["Paris,France","Shanghai,China","Los Angeles,Usa","Sao Paola,Brazil","Cairo,Egypt"]
+destinations=["Paris,France","Shanghai,China","Los Angeles,Usa","Sao Paulo,Brazil","Cairo,Egypt"]
 test_traveler=["Erin Wilkes","Shanghai,China", ["historical site", "art"]]
 def get_destination_index(destination):
   destination_index=destinations.index(destination)
@@ -11,5 +11,31 @@ def get_traveler_location(traveler):
 
 test_destination_index=get_traveler_location(test_traveler)
 print(test_destination_index)
+attractions=[]
+for destination in destinations:
+  attractions.append([])
+print(attractions)
+def  add_attraction(destination,attraction):
+  try:
+    destination_index=get_destination_index(destination)
+    attractions_for_destination=attractions[destination_index].append(attraction)
+  except SyntaxError:
+    return 
+
+add_attraction("Los Angeles,Usa",["Venice Beach",["beach"]])
+print(attractions)
+add_attraction("Paris,France", ["the Louvre", ["art", "museum"]])
+add_attraction("Paris,France", ["Arc de Triomphe", ["historical site", "monument"]])
+add_attraction("Shanghai,China", ["Yu Garden", ["garden", "historcical site"]])
+add_attraction("Shanghai,China", ["Yuz Museum", ["art", "museum"]])
+add_attraction("Shanghai,China", ["Oriental Pearl Tower", ["skyscraper", "viewing deck"]])
+add_attraction("Los Angeles,Usa", ["LACMA", ["art", "museum"]])
+add_attraction("Sao Paulo,Brazil", ["São Paulo Zoo", ["zoo"]])
+add_attraction("Sao Paulo,Brazil", ["Pátio do Colégio", ["historical site"]])
+add_attraction("Cairo,Egypt", ["Pyramids of Giza", ["monument", "historical site"]])
+add_attraction("Cairo,Egypt", ["Egyptian Museum", ["museum"]])
+
+
+
 
 
